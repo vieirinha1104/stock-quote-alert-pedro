@@ -1,0 +1,8 @@
+{
+    "SmtpHost": "smtp.gmail.com",
+    "HostEmail": "stockalertpedro@gmail.com",
+    "HostPassword": "xrcp heiy cfpy nvtb",
+    "EmailTo": "peteramvs@gmail.com",
+    "Port": 587,
+    "UseSsl": true
+}
