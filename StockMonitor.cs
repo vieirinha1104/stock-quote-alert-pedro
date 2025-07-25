@@ -41,7 +41,7 @@ public class StockMonitor {
                 Console.WriteLine($"[{dateTime:dd/MM/yyyy - HH:mm:ss}] [WARNING] Market appears to be closed.\n");
                 if (config.StopProgramIfMarketIsClosed) break;
             } 
-            if (true && !_marketPreOpening) {
+            if (marketState == "PRE" && !_marketPreOpening) {
                 _marketPreOpening = true;
                 Console.WriteLine($"[{dateTime:dd/MM/yyyy - HH:mm:ss}] [WARNING] Market appears to be in pre-opening.\n");
             }
