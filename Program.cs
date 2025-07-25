@@ -6,10 +6,10 @@ class Program {
         if (!TryParseArguments(args, out StockQuoteParameters? quote))
             return;
 
-        EmailConfig config = ConfigLoader.LoadEmailConfig("JsonConfigFile.json");
+        Config config = ConfigLoader.LoadEmailConfig("JsonConfigFile.json");
 
-        if (string.IsNullOrWhiteSpace(config.SmtpHost) || string.IsNullOrWhiteSpace(config.HostEmail) || string.IsNullOrWhiteSpace(config.HostPassword) || string.IsNullOrWhiteSpace(config.EmailTo)) {
-            Console.WriteLine("Error: Null configuration in the JSON file.\n");
+        if (Utils.HasInvalidConfig(config)) {
+            Console.WriteLine("Error: Invalid configuration in the JSON file.\n");
             return;
         }
         StockQuoteEmail emailClient = new StockQuoteEmail(config);

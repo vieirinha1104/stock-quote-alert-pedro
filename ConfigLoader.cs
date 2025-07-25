@@ -2,10 +2,10 @@
 
 namespace stock_quote_alert_pedro;
 public static class ConfigLoader {
-    public static EmailConfig LoadEmailConfig(string path) {
+    public static Config LoadEmailConfig(string path) {
         try {
             string json = File.ReadAllText(path);
-            var config = JsonSerializer.Deserialize<EmailConfig>(json);
+            var config = JsonSerializer.Deserialize<Config>(json);
 
             if (config is null)
                 throw new InvalidOperationException("Failed to deserialize EmailConfig from JSON.");

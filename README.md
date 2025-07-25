@@ -2,18 +2,18 @@
 
 Este projeto monitora o preço de uma ação da B3 (Bolsa de Valores brasileira) e envia alertas por e-mail com base em limites definidos pelo usuário.
 
-## ✅ Pré-requisitos
+## Pré-requisitos
 
 - [.NET SDK 8.0 ou superior](https://dotnet.microsoft.com/download)
 - Conexão com a internet
 - Arquivo `JsonConfigFile.json` com a configuração de e-mail preenchida corretamente
 
-## 🛠️ Como compilar o projeto
+##  Como compilar o projeto
 
 1. Abra o terminal (PowerShell, CMD ou bash).
 2. Navegue até a raiz do projeto (onde está o `.csproj` ou `.sln`):
 
-```powershell
+powershell
 cd caminho/para/Stock-Quote-Alert-main
 
 3. Compile o projeto com:

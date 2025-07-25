@@ -5,10 +5,10 @@ using System.Text.RegularExpressions;
 namespace stock_quote_alert_pedro;
 
 public class StockQuoteEmail {
-    private readonly EmailConfig _config;
+    private readonly Config _config;
     private static readonly Regex _emailRegex = new Regex(@"\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}", RegexOptions.Compiled);
 
-    public StockQuoteEmail(EmailConfig config) {
+    public StockQuoteEmail(Config config) {
         _config = config ?? throw new ArgumentNullException(nameof(config));
     }
 
