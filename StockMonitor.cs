@@ -55,7 +55,7 @@ public class StockMonitor {
                 long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                 string message = $"Hey, The Price for {quote.GetSymbol()} is {price}. I'd recommend you sell it!";
                 if (now - _lastSellAlertTimestamp >= _coolDown) {
-                    Console.WriteLine("Price is greater than the upper bound.\n");
+                    Console.WriteLine($"[{dateTime:dd/MM/yyyy - HH:mm:ss}] [WARNING] Sell Alert. Price is greater than the upper bound.\n");
                     emailClient.SendEmail(config.EmailTo!, "Sell Alert", message);
                     _lastSellAlertTimestamp = now;
                 }
@@ -64,7 +64,7 @@ public class StockMonitor {
                 long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                 string message = $"Hey, The Price for {quote.GetSymbol()} is {price}. I'd recommend you buy it!";
                 if (now - _lastBuyAlertTimestamp >= _coolDown) {
-                    Console.WriteLine("Price is lower than the lower bound.\n");
+                    Console.WriteLine($"[{dateTime:dd/MM/yyyy - HH:mm:ss}] [WARNING] Buy Alert. Price is lower than the lower bound.\n");
                     emailClient.SendEmail(config.EmailTo!, "Buy Alert", message);
                     _lastBuyAlertTimestamp = now;
                 }
