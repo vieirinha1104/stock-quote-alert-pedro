@@ -40,8 +40,8 @@ class Program {
             return false;
         }
 
-        if (upper <= lower) {
-            Utils.printWarning("Upper bound must be greater than lower bound.\n");
+        if (upper < lower) {
+            Utils.printWarning("The upper bound must not be lower than the lower bound.\n");
             return false;
         }
 
