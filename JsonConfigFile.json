@@ -4,5 +4,6 @@
     "HostPassword": "xrcp heiy cfpy nvtb",
     "EmailTo": "peteramvs@gmail.com",
     "Port": 587,
-    "UseSsl": true
+    "UseSsl": true,
+    "CoolDown": 300
 }

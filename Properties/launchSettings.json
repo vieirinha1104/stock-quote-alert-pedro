@@ -2,7 +2,7 @@
   "profiles": {
     "stock-quote-alert-pedro": {
       "commandName": "Project",
-      "commandLineArgs": "BBAS3 20.19 19.93"
+      "commandLineArgs": "PETR4 31.95 31.80"
     }
   }
 }

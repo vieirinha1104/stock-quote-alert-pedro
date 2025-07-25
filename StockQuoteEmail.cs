@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace stock_quote_alert_pedro;
 
-class StockQuoteEmail {
+public class StockQuoteEmail {
     private readonly EmailConfig _config;
     private static readonly Regex _emailRegex = new Regex(@"\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}", RegexOptions.Compiled);
 
@@ -18,7 +18,7 @@ class StockQuoteEmail {
             email.From = new MailAddress(_config.HostEmail!);
 
             if (!CheckEmail(emailTo))
-                throw new ArgumentException("Endereço de e-mail inválido.", nameof(emailTo));
+                throw new ArgumentException("Invalid email address\n", nameof(emailTo));
 
             email.To.Add(emailTo);
             email.Subject = subject;
@@ -26,7 +26,7 @@ class StockQuoteEmail {
             email.IsBodyHtml = true;
             return email;
         } catch (Exception ex) {
-            Console.WriteLine($"Erro ao criar mensagem de e-mail: {ex.Message}");
+            Console.WriteLine($"Error creating email message: {ex.Message}\n");
             return null;
         }
     }
@@ -34,10 +34,9 @@ class StockQuoteEmail {
     public void SendEmail(string emailTo, string subject, string body) {
         MailMessage? message = SetMessage(body, subject, emailTo);
         if (message is null) {
-            Console.WriteLine("Não foi possível criar a mensagem de e-mail. Cancelando envio.");
+            Console.WriteLine("Unable to create the email message. Cancelling send.\n");
             return;
         }
-
         SendSmtpEmail(message);
     }
 

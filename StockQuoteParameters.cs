@@ -1,5 +1,5 @@
 ﻿namespace stock_quote_alert_pedro;
-class StockQuoteParameters {
+public class StockQuoteParameters {
     private string _symbol = "";
     private double _upperBound = 0;
     private double _lowerBound = 0;
