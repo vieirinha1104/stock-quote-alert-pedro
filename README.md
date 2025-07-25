@@ -37,35 +37,54 @@ Ex:
 
 Exemplo de saída no terminal:
 
-Monitoring PETR4...
-Alert if price < 31,7 or > 31,9
+Monitoring PETR4:
+Alert if price < 32,05 or > 32,05
 
-Current stock price is: 31,94
-Price is greater than the upper bound.
+[25/07/2025 - 15:07:03] Ticker: PETR4 , Price: 32,06
 
-Current stock price is: 31,95
-Price is greater than the upper bound.
-Sell alert already sent. Waiting for cooldown.
+[25/07/2025 - 15:07:03] [WARNING] Sell Alert. Price is greater than the upper bound.
 
-Current stock price is: 31,89
+[25/07/2025 - 15:07:09] Ticker: PETR4 , Price: 32,06
 
-Current stock price is: 31,69
-Price is lower than the lower bound.
+[25/07/2025 - 15:07:12] Ticker: PETR4 , Price: 32,06\
 
-Current stock price is: 31,68
-Price is lower than the lower bound.
-Buy alert already sent. Waiting for cooldown
+...
 
 Arquivo de Configuração JsonConfigFile.json:
-
+Este arquivo JSON contém as configurações necessárias para o envio de alertas por e-mail e o comportamento do monitoramento. O conteúdo padrão do arquivo é o seguinte:
 {
-    "SmtpHost": "smtp.gmail.com", // "smtp.seuprovedor.com"
-    "HostEmail": "stockalertpedro@gmail.com", // seuemail@provedor.com"
-    "HostPassword": "xrcp heiy cfpy nvtb", // sua senha
-    "EmailTo": "peteramvs@gmail.com", // endereço de email que vai receber o alerta
-    "Port": 587, // porta default do smtp gmail
-    "UseSsl": true
+  "SmtpHost": "smtp.gmail.com",
+  "HostEmail": "stockalertpedro@gmail.com",
+  "HostPassword": "xrcp heiy cfpy nvtb",
+  "EmailTo": "peteramvs@gmail.com",
+  "Port": 587,
+  "UseSsl": true,
+  "CoolDown": 300,
+  "StopProgramIfMarketIsClosed": false
 }
+Descrição dos Campos:
+SmtpHost: Endereço do servidor SMTP usado para enviar os e-mails (ex: smtp.gmail.com).
+
+HostEmail: Conta de e-mail usada para envio dos alertas.
+
+HostPassword: Senha ou código de aplicativo da conta de e-mail do remetente.
+
+EmailTo: Endereço de e-mail que irá receber os alertas.
+
+Port: Porta do servidor SMTP (ex: 587 para TLS).
+
+UseSsl: Define se o envio de e-mails deve usar SSL (default true).
+
+CoolDown: Intervalo mínimo (em segundos) entre dois alertas do mesmo tipo.
+Por exemplo, se o preço ultrapassar o limite de venda (upper bound) e um e-mail for enviado, o programa aguardará pelo menos 300 segundos (5 minutos) antes de enviar outro alerta de venda, mesmo que a condição continue sendo atendida. Esse valor pode ser ajustado livremente pelo usuário.
+
+StopProgramIfMarketIsClosed:
+
+    - Se true, o programa será encerrado automaticamente caso o mercado esteja fechado.
+
+    - Se false, o programa continuará rodando mesmo fora do horário de negociação.
+
+- Importante: Certifique-se de que o arquivo JsonConfigFile.json esteja na mesma pasta do executável, ou especifique corretamente o caminho no código.
 
 Observações:
 1-) Se o SMTP Host for o Gmail (smtp.gmail.com), a senha que deve constar no json de configurações do programa não se trata da sua senha padrão do Gmail, portanto realize os seguintes passos:
