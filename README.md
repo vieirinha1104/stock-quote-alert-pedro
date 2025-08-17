@@ -52,16 +52,7 @@ Alert if price < 32,05 or > 32,05
 
 ## Arquivo de Configuração JsonConfigFile.json:
 Este arquivo JSON contém as configurações necessárias para o envio de alertas por e-mail e o comportamento do monitoramento. O conteúdo padrão do arquivo é o seguinte:
-{
-  "SmtpHost": "smtp.gmail.com",
-  "HostEmail": "stockalertpedro@gmail.com",
-  "HostPassword": "xrcp heiy cfpy nvtb",
-  "EmailTo": "peteramvs@gmail.com",
-  "Port": 587,
-  "UseSsl": true,
-  "CoolDown": 300,
-  "StopProgramIfMarketIsClosed": false
-}
+<pre> ```json { "SmtpHost": "smtp.gmail.com", "HostEmail": "stockalertpedro@gmail.com", "HostPassword": "********", "EmailTo": "peteramvs@gmail.com", "Port": 587, "UseSsl": true, "CoolDown": 300, "StopProgramIfMarketIsClosed": false } ``` </pre>
 Descrição dos Campos:
 SmtpHost: Endereço do servidor SMTP usado para enviar os e-mails (ex: smtp.gmail.com).
 
