@@ -50,7 +50,7 @@ Alert if price < 32,05 or > 32,05
 
 ...
 
-Arquivo de Configuração JsonConfigFile.json:
+## Arquivo de Configuração JsonConfigFile.json:
 Este arquivo JSON contém as configurações necessárias para o envio de alertas por e-mail e o comportamento do monitoramento. O conteúdo padrão do arquivo é o seguinte:
 {
   "SmtpHost": "smtp.gmail.com",
