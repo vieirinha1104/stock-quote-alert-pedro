@@ -54,30 +54,31 @@ Alert if price < 32,05 or > 32,05
 Este arquivo JSON contém as configurações necessárias para o envio de alertas por e-mail e o comportamento do monitoramento. O conteúdo padrão do arquivo é o seguinte:
 <pre> ```json { "SmtpHost": "smtp.gmail.com", "HostEmail": "stockalertpedro@gmail.com", "HostPassword": "********", "EmailTo": "peteramvs@gmail.com", "Port": 587, "UseSsl": true, "CoolDown": 300, "StopProgramIfMarketIsClosed": false } ``` </pre>
 
-*Descrição dos Campos:*
-*SmtpHost:* Endereço do servidor SMTP usado para enviar os e-mails (ex: smtp.gmail.com).
-
-*HostEmail:* Conta de e-mail usada para envio dos alertas.
-
-*HostPassword:* Senha ou código de aplicativo da conta de e-mail do remetente.
-
-*EmailTo:* Endereço de e-mail que irá receber os alertas.
-
-*Port:* Porta do servidor SMTP (ex: 587 para TLS).
-
-*UseSsl:* Define se o envio de e-mails deve usar SSL (default true).
-
-*CoolDown:* Intervalo mínimo (em segundos) entre dois alertas do mesmo tipo.
+### Descrição dos Campos:
+**SmtpHost:** Endereço do servidor SMTP usado para enviar os e-mails (ex: smtp.gmail.com).
+<br></br>
+**HostEmail:** Conta de e-mail usada para envio dos alertas.
+<br></br>
+**HostPassword:** Senha ou código de aplicativo da conta de e-mail do remetente.
+<br></br>
+**EmailTo:** Endereço de e-mail que irá receber os alertas.
+<br></br>
+**Port:** Porta do servidor SMTP (ex: 587 para TLS).
+<br></br>
+**UseSsl:** Define se o envio de e-mails deve usar SSL (default true).
+<br></br>
+**CoolDown:** Intervalo mínimo (em segundos) entre dois alertas do mesmo tipo.
 Por exemplo, se o preço ultrapassar o limite de venda (upper bound) e um e-mail for enviado, o programa aguardará pelo menos 300 segundos (5 minutos) antes de enviar outro alerta de venda, mesmo que a condição continue sendo atendida. Esse valor pode ser ajustado livremente pelo usuário.
-
-*StopProgramIfMarketIsClosed:*
+<br></br>
+**StopProgramIfMarketIsClosed:**
     - Se true, o programa será encerrado automaticamente caso o mercado esteja fechado.
 
     - Se false, o programa continuará rodando mesmo fora do horário de negociação.
 
 - Importante: Certifique-se de que o arquivo JsonConfigFile.json esteja na mesma pasta do executável, ou especifique corretamente o caminho no código.
-
-Observações:
+<br></br>
+**Observações:**
+  <br></br>
 1-) Se o SMTP Host for o Gmail (smtp.gmail.com), a senha que deve constar no json de configurações do programa não se trata da sua senha padrão do Gmail, portanto realize os seguintes passos:
 
 - Ativar verificação em duas etapas na conta Google
@@ -85,12 +86,12 @@ Observações:
 - Gerar uma senha de app em: https://myaccount.google.com/apppasswords
 
 - Usar essa senha no json de configuração do programa
-
+<br></br>
 2-) Se o SMTP Host for o Outlook (smtp.office365.com), o suporte a autenticação com usuário e senha simples está sendo descontinuado. Nesse caso, você também deve usar:
 
 - Ativar verificação em duas etapas 
 - Usar a senha de aplicativo
-
+<br></br>
 3-) No caso de o programa ativar a Exception: 'System.IO.FileNotFoundException: 'Could not find file 'C:\Users\pvieira\source\repos\stock-quote-alert-pedro\stock-quote-alert-pedro\bin\Debug\net8.0\JsonConfigFile.json'.':
 
 - No Visual Studio, clique com botão direito do mouse no arquivo JsonConfigFile.json no Solution Explorer
