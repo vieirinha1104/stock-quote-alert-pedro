@@ -46,7 +46,7 @@ Alert if price < 32,05 or > 32,05
 
 [25/07/2025 - 15:07:09] Ticker: PETR4 , Price: 32,06
 
-[25/07/2025 - 15:07:12] Ticker: PETR4 , Price: 32,06\
+[25/07/2025 - 15:07:12] Ticker: PETR4 , Price: 32,06
 
 ...
 
