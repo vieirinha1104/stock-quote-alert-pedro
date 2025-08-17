@@ -53,24 +53,24 @@ Alert if price < 32,05 or > 32,05
 ## Arquivo de Configuração JsonConfigFile.json:
 Este arquivo JSON contém as configurações necessárias para o envio de alertas por e-mail e o comportamento do monitoramento. O conteúdo padrão do arquivo é o seguinte:
 <pre> ```json { "SmtpHost": "smtp.gmail.com", "HostEmail": "stockalertpedro@gmail.com", "HostPassword": "********", "EmailTo": "peteramvs@gmail.com", "Port": 587, "UseSsl": true, "CoolDown": 300, "StopProgramIfMarketIsClosed": false } ``` </pre>
-Descrição dos Campos:
-SmtpHost: Endereço do servidor SMTP usado para enviar os e-mails (ex: smtp.gmail.com).
 
-HostEmail: Conta de e-mail usada para envio dos alertas.
+*Descrição dos Campos:*
+*SmtpHost:* Endereço do servidor SMTP usado para enviar os e-mails (ex: smtp.gmail.com).
 
-HostPassword: Senha ou código de aplicativo da conta de e-mail do remetente.
+*HostEmail:* Conta de e-mail usada para envio dos alertas.
 
-EmailTo: Endereço de e-mail que irá receber os alertas.
+*HostPassword:* Senha ou código de aplicativo da conta de e-mail do remetente.
 
-Port: Porta do servidor SMTP (ex: 587 para TLS).
+*EmailTo:* Endereço de e-mail que irá receber os alertas.
 
-UseSsl: Define se o envio de e-mails deve usar SSL (default true).
+*Port:* Porta do servidor SMTP (ex: 587 para TLS).
 
-CoolDown: Intervalo mínimo (em segundos) entre dois alertas do mesmo tipo.
+*UseSsl:* Define se o envio de e-mails deve usar SSL (default true).
+
+*CoolDown:* Intervalo mínimo (em segundos) entre dois alertas do mesmo tipo.
 Por exemplo, se o preço ultrapassar o limite de venda (upper bound) e um e-mail for enviado, o programa aguardará pelo menos 300 segundos (5 minutos) antes de enviar outro alerta de venda, mesmo que a condição continue sendo atendida. Esse valor pode ser ajustado livremente pelo usuário.
 
-StopProgramIfMarketIsClosed:
-
+*StopProgramIfMarketIsClosed:*
     - Se true, o programa será encerrado automaticamente caso o mercado esteja fechado.
 
     - Se false, o programa continuará rodando mesmo fora do horário de negociação.
