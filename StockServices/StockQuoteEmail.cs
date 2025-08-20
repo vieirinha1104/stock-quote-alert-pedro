@@ -1,8 +1,9 @@
 ﻿using System.Net;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
+using stock_quote_alert_pedro.Entities;
 
-namespace stock_quote_alert_pedro;
+namespace stock_quote_alert_pedro.StockServices;
 
 public class StockQuoteEmail {
     private readonly Config _config;

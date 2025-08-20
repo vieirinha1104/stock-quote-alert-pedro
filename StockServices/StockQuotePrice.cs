@@ -1,6 +1,7 @@
-﻿using YahooFinanceApi;
+﻿using stock_quote_alert_pedro.Entities;
+using YahooFinanceApi;
 
-namespace stock_quote_alert_pedro;
+namespace stock_quote_alert_pedro.StockServices;
 class StockQuotePrice {
     private bool _checkTicker = true;
     public void setCheckTicker(bool ticker) {

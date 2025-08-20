@@ -1,4 +1,6 @@
 ﻿using stock_quote_alert_pedro;
+using stock_quote_alert_pedro.Entities;
+using stock_quote_alert_pedro.StockServices;
 using YahooFinanceApi;
 
 public class StockMonitor {

@@ -1,4 +1,4 @@
-﻿namespace stock_quote_alert_pedro;
+﻿namespace stock_quote_alert_pedro.Entities;
 public class YahooStockQuoteResult {
     public double Price { get; set; }
     public DateTimeOffset Timestamp { get; set; }

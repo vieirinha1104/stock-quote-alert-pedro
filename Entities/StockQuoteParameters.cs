@@ -1,4 +1,4 @@
-﻿namespace stock_quote_alert_pedro;
+﻿namespace stock_quote_alert_pedro.Entities;
 public class StockQuoteParameters {
     private string _symbol = "";
     private double _upperBound = 0;
