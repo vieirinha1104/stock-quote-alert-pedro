@@ -1,4 +1,6 @@
 ﻿using System.Globalization;
+using stock_quote_alert_pedro.Entities;
+using stock_quote_alert_pedro.StockServices;
 
 namespace stock_quote_alert_pedro;
 class Program {
